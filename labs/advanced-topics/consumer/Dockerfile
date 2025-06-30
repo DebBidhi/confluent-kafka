@@ -10,5 +10,4 @@ COPY --from=builder /home/gradle/project/build/distributions/project.tar /app/
 WORKDIR /app
 RUN tar -xvf project.tar
 WORKDIR /app/project
-CMD java -classpath "lib/*" clients.VehiclePositionConsumer
-        
+CMD ["java", "-classpath", "lib/*", "clients.VehiclePositionConsumer"]        
